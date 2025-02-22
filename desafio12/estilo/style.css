@@ -15,9 +15,13 @@ header{
       padding-top: 50px;
       padding-bottom: 50px;
 }
+/*  text-transform: ;posso colocar todas a letras maiusculas e minusculas, conduto font-variant: small-caps; é melhor para site na questão visualização*/
 header >h1 {
+
       font-variant: small-caps;
+    
 }
+
 a{
       text-decoration: none;
       color: white;
@@ -26,6 +30,7 @@ a{
 header a:hover, footer a:hover{
       text-decoration: underline;
 }
+/*line-height espaçamento das linhas */
 section {
       padding-left: 30px;
       padding-top: 10vh;
