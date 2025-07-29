@@ -6,46 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabelas</title>
 </head>
-    <style>
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-           
-        }
-        caption{
-           font-size: 1.5em;
-           font-weight: bold;
-           padding: 10px;
-           background-color: lightgrey;
-        }
-        table{
-            width: 500px;
-            border-collapse: collapse;
-        }
-        td,th{
-            border: 1px solid black;
-            padding: 10px;
-            
-        }
-        thead,tfoot{
-            background-color: #383838;
-            color: aliceblue;
-            text-align: center;
-        }
-        tbody > tr:nth-child(odd){
-            background-color: lightgrey;
-        }
-        .num{
-            text-align: right;
-            width: 100px;
-        }
-    </style>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    caption {
+        font-size: 1.5em;
+        font-weight: bold;
+        padding: 10px;
+        background-color: lightgrey;
+    }
+
+    table {
+        width: 500px;
+        border-collapse: collapse;
+        /*essa é uma propriedade que remove o espaço entre as células da tabela*/
+        position: relative;
+        /*posiciona a tabela em relação ao seu elemento pai*/
+    }
+    thead>tr>th {
+        position: sticky;
+        /*faz com que o cabeçalho da tabela fique fixo no topo quando a tabela é rolada*/
+       top: 0;
+        /*define a posição do cabeçalho fixo no topo da tabela*/    
+        background-color: #383838;
+        color: aliceblue;
+        /*define a cor de fundo e a cor do texto do cabeçalho*/
+    }   
+
+    td,
+    th {
+        border: 1px solid black;
+        padding: 10px;
+
+    }
+
+    thead,
+    tfoot {
+        background-color: #383838;
+        color: aliceblue;
+        text-align: center;
+    }
+
+    tbody>tr:nth-child(odd) {
+        /*seleciona as linhas ímpares do corpo da tabela*/
+        background-color: lightgrey;
+        /*aplica um fundo cinza claro às linhas ímpares*/
+    }
+
+    .num {
+        text-align: right;
+        width: 100px;
+    }
+</style>
+
 <body>
     <h1>Uso de tabela grandes </h1>,
     <!--Anatomia de tabelas grandes
             TABLE
               CAPTION
               THEAD
-                  TR, TD, TH
+                  TR, TD, TH    
               TBODY
                   TR, TD, TH
               TFOOT
@@ -55,8 +78,10 @@
     <table>
         <caption>Unidade Federativa do Brasil por população</caption>
         <thead>
-            <th>UNIDADE FEDARATIVA</th>
-            <th>População</th>
+            <tr>
+                <th scope="col">ESTADOS</th><!--Cabeçalho da tabela-->
+                <th scope="col">População</th><!--Cabeçalho da tabela-->
+            </tr>
         </thead>
         <tbody>
             <tr>
@@ -65,7 +90,7 @@
             </tr>
 
 
-            <tr>
+            <tr><!--Linha de separação entre os estados mais populosos e os menos populosos-->
                 <td>Minas Gerais</td>
                 <td class="num">21 322 691</td>
             </tr>
@@ -107,7 +132,7 @@
             </tr>
             <tr>
                 <td>Maranhão</td>
-                <td class="num">7 010 960	</td>
+                <td class="num">7 010 960 </td>
             </tr>
             <tr>
                 <td> Paraíba</td>
@@ -135,7 +160,7 @@
             </tr>
             <tr>
                 <td> Distrito Federal</td>
-                <td class="num">2 982 818	</td>
+                <td class="num">2 982 818 </td>
             </tr>
             <tr>
                 <td> Sergipe</td>
@@ -163,8 +188,8 @@
             </tr>
         </tbody>
         <tfoot>
-            <th>TOTAL DE HABITANTES</th>
-            <th>210 147 125</th>
+            <th scope="row">TOTAL DE HABITANTES</th>
+            <th scope="row">210 147 125</th>
         </tfoot>
 
     </table>
